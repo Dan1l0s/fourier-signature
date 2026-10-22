@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru" data-theme="auto">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="Одна цепочка эпициклов Фурье рисует подпись Dan1l0s.">
+    <title>Fourier signature · Dan1l0s</title>
+    <link rel="stylesheet" href="./src/style.css">
+  </head>
+  <body>
+    <div id="app" class="app">
+      <header class="page-header">
+        <h1>Fourier signature</h1>
+        <span class="header-signature">Dan1l0s</span>
+      </header>
+
+      <main>
+        <section class="drawing" aria-label="Подпись Фурье">
+          <div id="canvasStage" class="canvas-stage">
+            <canvas id="signatureCanvas" width="1440" height="720" role="img" aria-label="Одна цепочка вращающихся окружностей рисует надпись Dan1l0s шрифтом Oxanium.">
+              Одна цепочка эпициклов Фурье рисует надпись Dan1l0s.
+            </canvas>
+          </div>
+          <noscript>
+            <p class="notice">Для анимации нужно включить JavaScript.</p>
+          </noscript>
+
+          <section class="controls" aria-label="Управление анимацией">
+            <div class="playback-row">
+              <button id="playPause" class="play-button" type="button" aria-pressed="false">Нарисовать</button>
+              <div class="timeline-control">
+                <label class="timeline-label" for="timeline">
+                  <span>Полный проход</span>
+                  <output id="progressLabel" for="timeline">100%</output>
+                </label>
+                <input id="timeline" type="range" min="0" max="1" step="0.0001" value="1" aria-label="Положение пера в полном проходе">
+              </div>
+            </div>
+
+            <div class="settings-row">
+              <label class="field mode-field" for="traceMode">
+                <span>Линия</span>
+                <select id="traceMode">
+                  <option value="continuous" selected>Непрерывная</option>
+                  <option value="masked">Без перемычек</option>
+                </select>
+              </label>
+              <label class="field theme-field" for="themeMode">
+                <span>Тема</span>
+                <select id="themeMode">
+                  <option value="auto" selected>Системная</option>
+                  <option value="dark">Тёмная</option>
+                  <option value="light">Светлая</option>
+                </select>
+              </label>
+              <label class="field speed-field" for="playbackSpeed">
+                <span>Скорость</span>
+                <select id="playbackSpeed">
+                  <option value="0.5">0,5×</option>
+                  <option value="1" selected>1×</option>
+                  <option value="2">2×</option>
+                </select>
+              </label>
+              <div class="export-control" role="group" aria-labelledby="exportLabel">
+                <span id="exportLabel" class="field-label">Сохранить</span>
+                <div class="export-buttons">
+                  <button id="exportPng" type="button" aria-label="Сохранить изображение PNG">PNG</button>
+                  <button id="exportSvg" type="button" aria-label="Сохранить изображение SVG">SVG</button>
+                </div>
+              </div>
+            </div>
+            <p id="statusMessage" class="status-message" role="status" aria-live="polite" aria-atomic="true"></p>
+          </section>
+        </section>
+      </main>
+
+      <footer class="page-footer">
+        <span>Одна траектория. Один ряд Фурье.</span>
+        <span>Шрифт <a href="https://github.com/sevmeyer/oxanium" target="_blank" rel="noopener noreferrer">Oxanium</a></span>
+      </footer>
+    </div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

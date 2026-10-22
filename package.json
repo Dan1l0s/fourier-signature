@@ -1,0 +1,21 @@
+{
+  "name": "fourier-signature",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Dan1l0s drawn by one continuous Fourier series.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "generate": "node scripts/build-word.mjs",
+    "render": "node scripts/render.mjs",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "@napi-rs/canvas": "0.1.100",
+    "gifenc": "1.0.3"
+  }
+}
